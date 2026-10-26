@@ -302,8 +302,7 @@ steps:
   # Those agents run --no-plugins, while this lane needs the Docker plugin
   # to provide the pinned vLLM/MoRI userspace on a two-GPU xGMI host. Put the
   # condition on the group so fork builds cannot run plugin hooks.
-  # The dedicated hosts restore the digest-pinned image before each job and
-  # coordinate ownership with the other CI system sharing the machines. Keep
+  # The dedicated hosts restore the digest-pinned image before each job. Keep
   # plugin hooks off untrusted fork pull requests.
   - group: ":large_purple_circle: ROCm MoRI XGMI P/D"
     key: "pd-disagg-moriio-tests"
